@@ -15,8 +15,44 @@ public class E04_Casting {
 	 * 			- 메모리 바이트수가 큰 타입을 작은 타입으로 바꿔야 될때 --> double -> float
 	 */
 	public static void main(String[] args) {
+		//자동으로 형변환 되는 경우
+		int n = 120;
+		double d = n;
+		System.out.println(d);
+		System.out.println(d / 7);
 		
+		short s = 100;//byte short는 int 형에서 자동으로 형변환 되서 저장
+		System.out.println(s);
+		
+		long l = 100l;
+		System.out.println(s - l);
+		
+		float f = 3.1415f;
+		System.out.println(d - f);
+		
+		//문자를 계산시 정수형으로 자동으로 형변환
+		System.out.println('B' - 1);
+		System.out.println('A' - 'B');
+
+		//강제로 형변환하는 방법 ---> (바꾸고 싶은변수 타입) 값 or 변수
+		double pi = 3.5415;
+		int i = (int)pi;
+		System.out.println(i);
+		
+		int a = 65;
+		char ch = (char)a;
+		System.out.println(ch + " " + a);
+		System.out.println((char)a);
 	}
 }
+
+
+
+
+
+
+
+
+
 
 
