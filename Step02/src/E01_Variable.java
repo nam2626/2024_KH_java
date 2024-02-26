@@ -21,9 +21,17 @@ public class E01_Variable {
 		System.out.println(num);
 		num = 300;
 		System.out.println(num);
+		
+		
 	}
 	
 }
+
+
+
+
+
+
 
 
 
