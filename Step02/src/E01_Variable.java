@@ -11,6 +11,9 @@ public class E01_Variable {
 		 * 			논리 : 참(true), 거짓(false)
 		 * 
 		 * 		변수(Variable) : 데이터를 하나 저장할 공간
+		 * 	
+		 * 		변수 선언 방법
+		 * 			변수타입 변수명;
 		 */
 		
 		int num;//num이라는 이름으로 정수형 데이터를 하나 저장할 공간을 임대 받았다.
@@ -26,6 +29,14 @@ public class E01_Variable {
 		System.out.println(age);
 		
 		//정수형 변수 3개를 선언한 뒤 데이터를 각각 10, 20, 30으로 초기화 후에 출력
+		int n1 = 10, n2 = 20, n3 = 30;
+		System.out.println(n1 + " " + n2 + " " + n3);
+		
+		int n4, n5, n6;
+		//n4, n5, n6를 전부 0으로 초기화
+		n4 = n5 = n6 = 0;
+		System.out.println(n4 + " " + n5 + " " + n6);
+		
 	}
 	
 }
