@@ -22,7 +22,10 @@ public class E01_Variable {
 		num = 300;
 		System.out.println(num);
 		
+		int age = 20;//변수를 선언하자마자 초기화
+		System.out.println(age);
 		
+		//정수형 변수 3개를 선언한 뒤 데이터를 각각 10, 20, 30으로 초기화 후에 출력
 	}
 	
 }
