@@ -20,6 +20,7 @@ public class E12_Quest {
 		//Case 2
 		int result = n1 - n2;
 		System.out.println(result < 0 ? -result : result);
+		System.out.println(n1 - n2 < 0 ? -(n1 - n2) : n1 - n2);
 	}
 
 }
