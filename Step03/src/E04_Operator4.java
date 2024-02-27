@@ -16,6 +16,15 @@ public class E04_Operator4 {
 		System.out.println(n1 <= n2);
 		System.out.println(n1 == n2);
 		System.out.println(n1 != n2);
+		System.out.println("--------");
+		
+		double d1 = 0.1, d2 = 0.2;
+		System.out.println(d1 + d2 == 0.3);
+		System.out.println(d1 + d2);
+		System.out.println("--------");
+		
+		boolean result = n1 == n2;
+		System.out.println(result);
 	}
 
 }
