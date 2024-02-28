@@ -24,7 +24,15 @@ public class E11_Switch {
 		System.out.print("원하시는 번호를 입력 하세요 >> ");
 		int no = sc.nextInt();
 		
-		
+		switch(no) {
+		case 3:
+			System.out.println("프림 추가");
+		case 2:
+			System.out.println("설탕 추가");
+		case 1:
+			System.out.println("커피 추가");
+			System.out.println("뜨거운 물 추가");
+		}
 		
 	}
 
