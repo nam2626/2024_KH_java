@@ -14,7 +14,7 @@ public class E01_if {
 	 * 		}
 	 */
 	public static void main(String[] args) {
-		int n = 0;
+		int n = -10;
 		
 		if(n < 0) {
 			System.out.println("음수 입니다.");
