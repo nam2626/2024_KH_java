@@ -27,7 +27,13 @@ public class E07_Quest {
 		System.out.println(result);
 		
 		//case 3
-		
+		if(n1 < n2) {
+			int temp = n1;
+			n1 = n2;
+			n2 = temp;
+		}
+		int r = n1 - n2;
+		System.out.println(r);
 		
 		
 	}
