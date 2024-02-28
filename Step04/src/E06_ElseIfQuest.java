@@ -9,6 +9,10 @@ public class E06_ElseIfQuest {
 		70점 이상 ~ 80점 미만: C
 		60점 이상 ~ 70점 미만: D
 		60점 미만: F
+		
+		95점 이상 A+
+		85~89 B+
+		75~79 C+
 	 */
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -24,6 +28,9 @@ public class E06_ElseIfQuest {
 			grade =	"C";
 		else if(score >= 60)
 			grade =	"D";
+		
+		if(score >= 70 && score % 10 >= 5 || score == 100)
+			grade += "+";
 		
 		System.out.println(grade);
 	}
