@@ -21,8 +21,7 @@ public class E13_Quest {
 				count++;
 			}
 		}
-		System.out.println();
-		System.out.println("약수의 개수 : " + count);
+		System.out.println("\n약수의 개수 : " + count);
 	}
 
 }
