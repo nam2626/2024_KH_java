@@ -19,8 +19,24 @@ public class E05_Quest {
 		String result = "홀수 목록 : ";
 		Scanner sc = new Scanner(System.in);
 		
-		
+		int n = 0;
+		do {
+			System.out.print("숫자 입력 > ");
+			n = sc.nextInt();
+			
+			if(n % 2 == 1) {
+				result += n + " ";
+			}
+		}while(n != 0);
 		System.out.println(result);
 	}
 
 }
+
+
+
+
+
+
+
+
