@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class E08_Quest {
+public class E09_Quest {
 	/*
 	 * 	숫자 입력 > 5
 	 * 
