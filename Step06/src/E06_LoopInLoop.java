@@ -12,6 +12,7 @@ public class E06_LoopInLoop {
 //		}
 		
 		//위에 코드를 while로 바꾸어서 실행
+		//중첩된 반복문 전후로 해야될 작업 명확히 처리해야되는 부분
 		int dan = 2, i = 1;
 		while(dan < 10) {
 			System.out.println("--"+dan+"단--");
