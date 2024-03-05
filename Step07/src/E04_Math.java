@@ -16,6 +16,17 @@ public class E04_Math {
 		//큰 값, 작은 값
 		System.out.println(Math.max(10, 20));
 		System.out.println(Math.min(10, 20));
+		
+		//삼각함수, 사인, 코사인, 탄젠트 각각 40도에 해당하는 결과를 출력
+		System.out.println(Math.sin(Math.toRadians(40)));
+		System.out.println(Math.cos(Math.toRadians(40)));
+		System.out.println(Math.tan(Math.toRadians(40)));
+		
+		//pi
+		System.out.println(Math.PI);
+		
+		//랜덤
+		System.out.println(Math.random());
 	}
 
 }
