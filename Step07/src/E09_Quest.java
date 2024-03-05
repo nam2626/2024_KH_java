@@ -13,9 +13,19 @@ public class E09_Quest {
 	 */
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("가위 - 2, 바위 - 1, 보 - 3");
-		System.out.print("사용자 > ");
-		int user = sc.nextInt();
+		int user = 0;
+		while(true) {
+			System.out.println("가위 - 2, 바위 - 1, 보 - 3");
+			System.out.print("사용자 > ");
+			user = sc.nextInt();
+			
+			if(user < 1 || user > 3) {
+				System.out.println("잘못된 데이터를 입력하셨습니다.");
+				System.out.println("다시 입력해 주세요.");
+				continue;
+			}
+			break;
+		}
 		int com = (int)(Math.random() * 3) + 1;
 		
 		if(user == com)
