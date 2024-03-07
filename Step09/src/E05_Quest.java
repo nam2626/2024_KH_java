@@ -23,7 +23,12 @@ public class E05_Quest {
 		int idx = 0;//입력 받을 배열의 인덱스
 		while(true) {
 			//배열에 입력할 공간이 없으면 배열을 3개씩 늘려주는 작업
-			
+			if(idx == arr.length) {
+				int[] temp = new int[arr.length+3];
+				for(int i=0;i<arr.length;i++)
+					temp[i] = arr[i];
+				arr = temp;
+			}
 			//입력한 숫자가 -1이면 반복문 종료 되게끔 처리
 			System.out.print("숫자 입력 > ");
 			arr[idx] = sc.nextInt();
@@ -35,6 +40,15 @@ public class E05_Quest {
 		}
 		
 		System.out.println(Arrays.toString(arr));
+		
+		//-1을 제외한 내용의 평균을 출력
+//		System.out.println(idx);
+		int total = 0;
+		
+		for(int i=0;i<idx;i++)
+			total += arr[i];
+		
+		System.out.println("입력하신 숫자들의 평균 : " + (double)total / idx);
 	}
 
 }
