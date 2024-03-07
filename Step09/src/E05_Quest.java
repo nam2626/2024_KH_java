@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class E05_Quest {
 	/*
@@ -14,7 +16,30 @@ public class E05_Quest {
 	 * 
 	 */
 	public static void main(String[] args) {
-
+		Scanner sc = new Scanner(System.in);
+		//정수형 배열 생성, 길이가 5
+		int[] arr = new int[5];
+		//반복문 -> 무한 루프
+		int idx = 0;//입력 받을 배열의 인덱스
+		while(true) {
+			//배열에 입력할 공간이 없으면 배열을 3개씩 늘려주는 작업
+			
+			//입력한 숫자가 -1이면 반복문 종료 되게끔 처리
+			System.out.print("숫자 입력 > ");
+			arr[idx] = sc.nextInt();
+			
+			if(arr[idx] == -1) break;
+			
+			idx++;
+			
+		}
+		
+		System.out.println(Arrays.toString(arr));
 	}
 
 }
+
+
+
+
+
