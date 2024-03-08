@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class E10_Quest {
@@ -6,6 +7,7 @@ public class E10_Quest {
 		Scanner sc = new Scanner(System.in);
 		//정수형 배열 생성, 길이 10
 		int[] arr = new int[10];
+		int idx = 0;
 		
 		while(true) {
 			System.out.println("add : 숫자 추가");
@@ -20,9 +22,11 @@ public class E10_Quest {
 			}else if(command.equals("add")) {
 				//배열에 숫자 추가
 				//배열에 숫자가 전부 저장되어 있으면, 배열의 길이를 5씩 늘리겠음
-				
-				
-				
+				System.out.print("숫자 입력 > ");
+				arr[idx] = sc.nextInt();
+				sc.nextLine();
+				idx++;
+				System.out.println(Arrays.toString(arr));
 			}
 			
 		}//end - while
