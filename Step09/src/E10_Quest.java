@@ -6,7 +6,7 @@ public class E10_Quest {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		//정수형 배열 생성, 길이 10
-		int[] arr = new int[10];
+		int[] arr = new int[5];
 		int idx = 0;
 		
 		while(true) {
@@ -20,8 +20,14 @@ public class E10_Quest {
 			if(command.equals("exit")) {
 				break;
 			}else if(command.equals("add")) {
+				//배열에 저장할 공간이 없으면 길이를 5씩 늘림
+				if(idx == arr.length) {
+					int[] temp = new int[arr.length+5];
+					//배열 복사
+					System.arraycopy(arr, 0, temp, 0, arr.length);
+					arr = temp;
+				}
 				//배열에 숫자 추가
-				//배열에 숫자가 전부 저장되어 있으면, 배열의 길이를 5씩 늘리겠음
 				System.out.print("숫자 입력 > ");
 				arr[idx] = sc.nextInt();
 				sc.nextLine();
