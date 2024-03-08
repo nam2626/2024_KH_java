@@ -1,18 +1,20 @@
 
 public class E14_Array2D {
 	/*
-	 * 		1  2  3  4  5
-	 * 		6  7  8  9  10
+	 * 		1   2  3  4  5
+	 * 		10  9  8  7  6
 	 * 		11 12 13 14 15
-	 * 		16 17 18 19 20
+	 * 		20 19 18 17 16
 	 * 		21 22 23 24 25
 	 */
 	public static void main(String[] args) {
 		int[][] arr = new int[5][5];
-		
+		int n = 1;
 		for(int i=0;i<arr.length;i++) {
-			
 			//각 행에 숫자 채우기
+			for (int j = 0; j < arr[i].length; j++) {
+				arr[i][j] = n++;
+			}
 			
 		}
 		
