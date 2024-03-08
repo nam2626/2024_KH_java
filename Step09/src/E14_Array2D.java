@@ -10,11 +10,16 @@ public class E14_Array2D {
 	public static void main(String[] args) {
 		int[][] arr = new int[5][5];
 		int n = 1;
+		int col = 0;
+		int sw = 1;
 		for(int i=0;i<arr.length;i++) {
 			//각 행에 숫자 채우기
-			for (int j = 0; j < arr[i].length; j++) {
-				arr[i][j] = n++;
+			while(col < arr[i].length && col > -1) {
+				arr[i][col] = n++;
+				col += sw;
 			}
+			sw = -sw;
+			col += sw;
 			
 		}
 		
