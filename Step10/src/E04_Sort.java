@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class E04_Sort {
 	//전체 배열을 출력하는 메서드
@@ -35,10 +36,31 @@ public class E04_Sort {
 			printArray(arr, i+1);
 		}
 	}
+	public static void insertSort() {
+		Scanner sc = new Scanner(System.in);
+		int[] arr = new int[5];
+		
+		for(int i=0;i<arr.length;i++) {
+			//1. 숫자 입력
+			System.out.print("input number > ");
+			arr[i] = sc.nextInt();
+			//2. 정렬
+			for (int j = i; j > 0; j--) {
+				if(arr[j] < arr[j-1]) {
+					int temp = arr[j];
+					arr[j] = arr[j-1];
+					arr[j-1] = temp;
+				}
+			}
+			printArray(arr, i+1);
+		}
+	}
+	
 	public static void main(String[] args) {
 		int[] arr = new int[] {5,7,9,3,1};
 //		bubleSort(arr);
-		selectSort(arr);
+//		selectSort(arr);
+		insertSort();
 	}
 
 }
