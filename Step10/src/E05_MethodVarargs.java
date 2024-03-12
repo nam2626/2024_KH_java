@@ -16,7 +16,7 @@ public class E05_MethodVarargs {
 //	}
 	//가변길이 매개변수는 맨 마지막에 사용
 	public static void methodEx(double ea, String str, int...arr) {}
-	`
+	
 	public static void main(String[] args) {
 		int[] arr = {1,2,3,4,5};
 		printArray1(arr);
