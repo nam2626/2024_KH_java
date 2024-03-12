@@ -53,8 +53,8 @@ public class Student {
 	//학생 정보를 출력하는 메서드
 	//출력예시 >> 20201111 홍길동 컴퓨터공학과 3.7(B+)
 	void printStudentInfo() {
-		System.out.printf("%s %s %s %.2f(%s)\n",studentNo,studentName,
-				majorName,score,getGrade());
+		System.out.printf("%s %s(%s) %s %.2f(%s)\n",studentNo,studentName,
+				(gender ? "남" : "여"),majorName,score,getGrade());
 	}
 }
 
