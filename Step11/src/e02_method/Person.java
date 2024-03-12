@@ -13,10 +13,10 @@ public class Person {
 	
 	//데이터를 받아서 초기화하는 메서드
 	void init(String n, int a) {
-		if(!n.equals("") || n != null)
-			name = n;
-		else
+		if(n.equals("") || n == null)
 			name = "임시값";
+		else
+			name = n;
 		
 		if(a > 0)
 			age = a;
