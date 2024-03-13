@@ -8,7 +8,7 @@ public class RefValParam {
 		n.setNum(n.getNum()+1);
 	}
 	//Call by Value - 값에 의한 호출 --> 값을 복사해서 보냄
-	//	매개변수와 원본값이 변수는 별개, 메서드에서 수정 작업을 해도 원본에는 영향을 미치지 않는다.
+	//	매개변수와 호출하는 변수와는 별개, 메서드에서 수정 작업을 해도 원본에는 영향을 미치지 않는다.
 	//	주로 기본형 변수 타입에서 발생한다.(int, float, char, double.....)
 	public static void minusNumber(int n) {
 		n--;
