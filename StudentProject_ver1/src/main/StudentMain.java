@@ -28,6 +28,7 @@ public class StudentMain {
 				service.addStudent();
 				break;
 			case 2:
+				service.searchStudent();
 				break;
 			case 3:
 				break;
