@@ -19,7 +19,7 @@ public class Employee {
 	//사원 정보 출력하는 메서드
 	//	출력 형태 : 사번 직급 부서명 이름 연봉
 	void printEmployeeInfo() {
-		System.out.printf("%10s %8s %10s %10s %6d\n",employeeNo,positionName,
+		System.out.printf("%10s %10s %10s %10s %6d\n",employeeNo,positionName,
 				departmentName,employeeName,salary);
 	}
 }
