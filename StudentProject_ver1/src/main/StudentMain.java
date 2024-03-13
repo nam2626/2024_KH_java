@@ -2,10 +2,14 @@ package main;
 
 import java.util.Scanner;
 
+import service.StudentService;
+
 public class StudentMain {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		StudentService service = new StudentService();
+		
 		while (true) {
 			System.out.println("1. 학생정보 등록");
 			System.out.println("2. 학생정보 검색");
@@ -21,6 +25,7 @@ public class StudentMain {
 			
 			switch(n) {
 			case 1:
+				service.addStudent();
 				break;
 			case 2:
 				break;
