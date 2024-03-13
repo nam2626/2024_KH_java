@@ -20,7 +20,7 @@ public class StudentMain {
 			System.out.print("원하시는 메뉴 번호를 입력 : ");
 			
 			int n = sc.nextInt();
-			
+			sc.nextLine();
 			if(n == 0) break;
 			
 			switch(n) {
