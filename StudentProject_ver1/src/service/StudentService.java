@@ -14,6 +14,7 @@ public class StudentService {
 	//학생 데이터 추가
 	public void addStudent() {
 		Scanner sc = new Scanner(System.in);
+		
 	}
 	
 	
