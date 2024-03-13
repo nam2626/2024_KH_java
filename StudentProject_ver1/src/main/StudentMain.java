@@ -6,7 +6,6 @@ public class StudentMain {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("");
 		while (true) {
 			System.out.println("1. 학생정보 등록");
 			System.out.println("2. 학생정보 검색");
