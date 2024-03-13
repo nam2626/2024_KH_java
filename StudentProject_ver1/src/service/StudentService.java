@@ -34,11 +34,32 @@ public class StudentService {
 	
 	
 	//학생 데이터 검색
-	
+	public void searchStudent() {
+		
+	}
 	//학생 데이터 삭제
-	
+	public void deleteStudent() {
+		
+	}
 	//학생 데이터 수정
-	
+	public void updateStudent() {
+		
+	}
 	//전체 학생 데이터 출력
-	
+	public void printAllStudent() {
+		System.out.println("전체 학생정보를 출력합니다........");
+		for(int i=0;i<list.size();i++) {
+			list.get(i).printInfo();
+		}
+		System.out.println();
+	}
 }
+
+
+
+
+
+
+
+
+
