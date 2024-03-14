@@ -7,6 +7,9 @@ public class TVMain {
 		
 		for(int i=0;i<776;i++)
 			tv.chUp();
+		
+		for(int i=0;i<30;i++)
+			tv.chDown();
 	}
 
 }

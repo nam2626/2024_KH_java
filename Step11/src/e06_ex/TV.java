@@ -33,13 +33,26 @@ public class TV {
 	
 	//채널Up ==> 채널값 증가, 최대값에 증가하면 첫번째 채널로 이동, 옮긴 채널값을 출력
 	public void chUp() {
+		//775 776 1 2 3 4 5
+		ch %= 776;
 		ch++;
-		if(ch > 776)
-			ch = 1;
 		System.out.println("현재 채널 : " + ch);
 	}
-	
+	//채널Down ==> 채널값 감소, 최소값에 감소하면 마지막 채널로 이동, 옮긴 채널값을 출력
+	//5 4 3 2 1 776 775 ...
+	public void chDown() {
+		ch--;
+		if(ch < 1)
+			ch = 776;
+		System.out.println("현재 채널 : " + ch);
+	}
 }
+
+
+
+
+
+
 
 
 
