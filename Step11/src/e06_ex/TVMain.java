@@ -10,6 +10,11 @@ public class TVMain {
 		
 		for(int i=0;i<30;i++)
 			tv.chDown();
+		
+		tv.powerOnOff();
+		tv.powerOnOff();
+		tv.powerOnOff();
+		tv.powerOnOff();
 	}
 
 }
