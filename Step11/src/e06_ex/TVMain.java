@@ -15,6 +15,13 @@ public class TVMain {
 		tv.powerOnOff();
 		tv.powerOnOff();
 		tv.powerOnOff();
+		tv.powerOnOff();
+		
+		tv.muteOnOff();
+		for(int i=0;i<60;i++) 
+			tv.volDown();
+		
+		
 	}
 
 }
