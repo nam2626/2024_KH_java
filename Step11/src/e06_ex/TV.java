@@ -17,6 +17,8 @@ package e06_ex;
 public class TV {
 	private final int MAX_CHANNEL = 776; 
 	private final int MIN_CHANNEL; 
+	private final int MAX_VOLUME = 50; 
+	private final int MIN_VOLUME = 0; 
 	private boolean power;
 	private boolean mute;
 	private int ch;
@@ -59,8 +61,31 @@ public class TV {
 	}
 	
 	//음량 Up - 만약 음소거 활성화(true) 되어있다면 비활성화(false)로 바꿔주고 끝냄
-	
+	public void volUp() {
+		if(!power) return;
+		if(mute) {
+			muteOnOff();
+			return;
+		}
+		
+		if(vol < MAX_VOLUME)
+			vol++;
+		
+		System.out.println("현재 음량 : "+vol);
+	}
 	//음량 Down - 만약 음소거 활성화(true) 되어있다면 비활성화(false)로 바꿔주고 끝냄
+	public void volDown() {
+		if(!power) return;
+		if(mute) {
+			muteOnOff();
+			return;
+		}
+		
+		if(vol > MIN_VOLUME)
+			vol--;
+		
+		System.out.println("현재 음량 : "+vol);
+	}
 	
 	//음소거OnOff 
 	public void muteOnOff() {
