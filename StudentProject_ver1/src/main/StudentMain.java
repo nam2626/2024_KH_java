@@ -31,8 +31,10 @@ public class StudentMain {
 				service.searchStudent();
 				break;
 			case 3:
+				service.deleteStudent();
 				break;
 			case 4:
+				service.updateStudent();
 				break;
 			case 5:
 				service.printAllStudent();
