@@ -52,7 +52,7 @@ public class StringEx {
 		System.out.println(Arrays.toString(result));
 		System.out.println(String.join("/", result));
 		
-		//문자열 포멧 : %s, %d, %f, %o, %x %X, %b, %c
+		//문자열 포멧 : %s, %d, %f %g, %o, %x %X, %b, %c
 		System.out.println(String.format("이름 : %s, 나이 : %d", "김철수",20));
 		System.out.println(String.format("%d %X %o", 10,10,10));
 		System.out.println(String.format("%b %c", true, 'F'));
