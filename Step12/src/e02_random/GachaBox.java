@@ -33,12 +33,39 @@ public class GachaBox {
 				arr[idx++] = grade[i];
 			}
 		}
-		System.out.println(Arrays.toString(arr));
+		//arr내용을 랜덤으로 섞음
+		for(int j = 0;j < 5;j++) {
+			for (int i = 0; i < arr.length / 2; i++) {
+				int n = r.nextInt(arr.length);
+				String temp = arr[i];
+				arr[i] = arr[n];
+				arr[n] = temp;			
+			}
+		}
+		
+//		System.out.println(Arrays.toString(arr));
 		return arr;
 	}
 	
 	public String[] drawItem(int ea) {
-		return null;
+		String[] arr = new String[ea];
+		final String[] gacha = generateGachaBox();
+		Random r = new Random();
+		for (int i = 0; i < ea; i++) {
+			//0~gacha길이 - 1 숫자를 뽑아서 해당 인덱스에 해당하는 값을 arr 저장
+			int n  = r.nextInt(gacha.length);
+			//해당위치값이 null이면 숫자 다시 뽑아야됨
+			if(gacha[n] == null) {
+				i--;
+				continue;
+			}
+			//해당위치값을 null로 변경
+			arr[i] = gacha[n];
+			gacha[n] = null;
+		}
+//		System.out.println(Arrays.toString(arr));
+//		System.out.println(Arrays.toString(gacha));
+		return arr;
 	}
 	
 
