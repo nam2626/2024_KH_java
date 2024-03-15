@@ -22,7 +22,9 @@ public class StringEx {
 		System.out.println(str3.indexOf("World",7));
 		//문자열 왼쪽부터 검색, 24번째 인덱스부터 검색, 검색 결과가 없으면 -1
 		System.out.println(str3.indexOf("World",24));
-		
+		//문자열 오른쪽 끝에서부터 검색 - 검색 결과는 인덱스 번호, 결과가 없으면 -1
+		System.out.println(str3.lastIndexOf("World"));
+		System.out.println(str3.lastIndexOf("World",22));
 		
 		
 		
