@@ -11,6 +11,8 @@ public class Number {
 	}
 
 	public static Number getInstance() {
+		if(instance == null)
+			instance = new Number();
 		return instance;
 	}
 	
