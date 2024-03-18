@@ -22,7 +22,16 @@ public class AK47 extends Gun{
 		System.out.println("reload!");
 	}
 	
-	
+	public void fireAll() {
+		bullet = 0;
+		System.out.println("Bang!!!!");
+	}
 
 	
 }
+
+
+
+
+
+

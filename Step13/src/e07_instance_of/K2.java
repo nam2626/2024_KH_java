@@ -21,6 +21,10 @@ public class K2 extends Gun{
 		bullet = 24;
 		System.out.println("reload!");
 	}
+	
+	public void addParts() {
+		System.out.println("K2 조준경 부착");
+	}
 }
 
 
