@@ -2,7 +2,13 @@ package e07_instance_of;
 
 public class InstanceOfMain {
 	public static void optionActive(Gun gun) {
-		
+		if(gun instanceof K2) {
+			K2 k2 = (K2) gun;
+			k2.addParts();
+		}else if(gun instanceof AK47) {
+			AK47 ak47 = (AK47) gun;
+			ak47.fireAll();
+		}
 	}
 	public static void main(String[] args) {
 		K2 k2 = new K2();
@@ -16,6 +22,11 @@ public class InstanceOfMain {
 		System.out.println(gun instanceof AK47);
 		System.out.println(gun instanceof Gun);
 		System.out.println(k2 instanceof Gun);
+		
+		optionActive(gun);
+		optionActive(new AK47());
+		optionActive(k2);
+		optionActive(new Gun());
 	}
 
 }
