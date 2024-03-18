@@ -1,10 +1,11 @@
 package e01_inheritance;
 
 public class Animal {
-	private int age;
+	protected int age;
 
 	public Animal() {
 		age = 20;
+		System.out.println("Animal 생성자");
 	}
 	
 	public void eat() {
