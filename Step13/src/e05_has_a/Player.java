@@ -9,6 +9,11 @@ package e05_has_a;
  *  reload 메서드에서 총 클래스의 reload를 호출
  *  
  *  PlayerMain 클래스를 만들어서 Player 생성해서 shot과 reload를 테스트
+ *  
+ *  객체와 객체의 Has a 관계를 상속구조로 표현하게되면 문제가 발생
+ *  플레이어의 경우 다양한 총기를 교체해야되는데, 상속으로 표현하면 총기하나에 귀속, 확장성이 떨어짐
+ *  총기 교환을 할려면 코드를 수정해야되는 문제가 생김
+ *  이런 문제 때문에 Has a 관계를 표현할 때는 상속 구조로 표현하면 안됨
  */
 
 public class Player extends K2{
