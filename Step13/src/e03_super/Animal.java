@@ -1,7 +1,7 @@
 package e03_super;
 
 public class Animal {
-	protected int age;
+	private int age;
 
 	public Animal(int age) {
 		this.age = age;
