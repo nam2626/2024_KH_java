@@ -14,7 +14,10 @@ public class EmployeeMain {
 		work(e1);
 		work(e2);
 		work(e3);
-		
+		work(new DevelopEmployee());
 	}
 
 }
+
+
+
