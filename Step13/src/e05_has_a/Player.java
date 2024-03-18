@@ -11,7 +11,7 @@ package e05_has_a;
  *  PlayerMain 클래스를 만들어서 Player 생성해서 shot과 reload를 테스트
  */
 
-public class Player extends Gun{
+public class Player extends K2{
 	
 	@Override
 	public void shot() {
