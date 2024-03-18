@@ -20,7 +20,30 @@ public class PowerMain {
 			System.out.print("원하시는 메뉴 번호 입력 : ");
 			int no = sc.nextInt();
 			
+			if(no == 1) {
+				deviceAllPowerOn();
+			}else if(no == 2) {
+				deviceAllPowerOff();
+			}else if(no == 0) {
+				break;
+			}
+			
 		}
+	}
+
+	private static void deviceAllPowerOff() {
+		//전체 전원 Off
+		for (int i=0;i<list.size();i++) {
+			list.get(i).powerOff();
+		}
+	}
+
+	private static void deviceAllPowerOn() {
+		//전체 전원 On
+		for (Power power : list) {
+			power.powerOn();
+		}
+		
 	}
 
 }
