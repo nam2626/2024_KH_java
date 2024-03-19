@@ -1,5 +1,7 @@
 package e01_object;
 
+import java.util.Objects;
+
 public class Employee {
 	// 사번
 	private String employeeNo;
@@ -69,24 +71,27 @@ public class Employee {
 		return "Employee [employeeNo=" + employeeNo + ", employeeName=" + employeeName + ", positionName="
 				+ positionName + ", departmentName=" + departmentName + ", salary=" + salary + "]";
 	}
-	
+
 	@Override
 	public int hashCode() {
-		return employeeNo.hashCode();
+		return Objects.hash(employeeNo);
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
-		if(obj == null) return false;
-		if(obj == this) return true;
-		
-		if(obj instanceof Employee) {
-			Employee temp = (Employee) obj;
-			return temp.employeeNo.equals(employeeNo);
-		}
-		
-		return false;
+		if (this == obj)
+			return true;
+		if (!(obj instanceof Employee))
+			return false;
+		Employee other = (Employee) obj;
+		return Objects.equals(employeeNo, other.employeeNo);
 	}
+
+
+
+
+	
+	
 	
 }
 
