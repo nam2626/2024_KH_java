@@ -2,6 +2,7 @@ package e02_collection;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ListExample {
 
@@ -43,6 +44,31 @@ public class ListExample {
 		//리스트에 저장된 데이터를 교체
 		list.set(1, "C");
 		System.out.println(list);
+		
+		//데이터를 원하는 인덱스 위치에 추가
+		list.add(1, "C#");
+		System.out.println(list);
+		
+		//데이터를 꺼내는 방법 - 1
+		for(int i=0;i<list.size();i++) {
+			//인덱스 번호를 이용해서 꺼냄
+			System.out.println(list.get(i));
+		}
+		System.out.println("---------------");
+		//데이터를 꺼내는 방법 - 2
+		for (String item : list) {
+			System.out.println(item);
+		}
+		System.out.println("---------------");
+		//데이터를 꺼내는 방법 - 3
+		Iterator<String> it = list.iterator();
+		
+		while(it.hasNext()) {
+			System.out.println(it.next());
+		}
+		System.out.println("---------------");
+
+		
 	}
 
 }
