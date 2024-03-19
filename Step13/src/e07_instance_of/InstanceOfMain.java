@@ -27,6 +27,11 @@ public class InstanceOfMain {
 		optionActive(new AK47());
 		optionActive(k2);
 		optionActive(new Gun());
+		
+		//클래스 이름 뽑기
+		System.out.println(gun.getClass().getName());//패키지 + 클래스명
+		System.out.println(gun.getClass().getSimpleName());//클래스명
+		System.out.println(AK47.class.getName());
 	}
 
 }
