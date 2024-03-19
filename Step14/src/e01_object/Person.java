@@ -1,11 +1,19 @@
 package e01_object;
 
-public class Person {
+public class Person{
 	private String name;
 	private int age;
 
 	public Person(String name, int age) {
 		this.name = name;
+		this.age = age;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
 		this.age = age;
 	}
 
@@ -25,6 +33,10 @@ public class Person {
 		//			어떤 객체라도 받을 수 있다.
 		//1. 메모리 주소가 같으면, 같은 객체
 		if(this == obj) return true;
+		
+		//객체가 null이면 false 리턴
+		if(obj == null) return false;
+		
 		//2. 받아온 obj가 현재 객체랑 비교할 수 있는 타입인지 확인
 		//	instanceof, getClass()를 활용해서 
 		//	객체가 가지고 클래스 정보로 패키지명.클래스명이 동일한지 확인
@@ -35,7 +47,6 @@ public class Person {
 		}
 		return false;
 	}
-	
 	
 }
 
