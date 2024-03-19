@@ -65,7 +65,9 @@ public class StudentService {
 		System.out.print("삭제할 학번 입력 : ");
 		String studentNo = sc.nextLine();
 		//2. 삭제할 데이터를 list에서 찾음
+//		int result = searchStudentList(studentNo);
 		int result = list.indexOf(new StudentDTO(studentNo, null, null, 0));
+
 		//3. 검색 결과에 따라서 삭제할 데이터가 있으면 삭제 후 삭제가 완료 되었습니다. 메세지를 출력
 		//	 검색 결과가 없으면 삭제할 데이터가 없습니다.
 		//	 list.remove(인덱스번호);   
@@ -83,8 +85,9 @@ public class StudentService {
 		System.out.print("수정할 학번 입력 : ");
 		String studentNo = sc.nextLine();
 		//2. 수정할 학생 정보를 검색
+//		int result = searchStudentList(studentNo);
 		int result = list.indexOf(new StudentDTO(studentNo, null, null, 0));
-		
+
 		//3. 수정할 학생 정보가 있으면, 이름, 학과명, 평점을 입력받아서 수정
 		//	 수정할 학생 정보가 없으면, '수정할 학생정보가 없습니다.' 메세지를 출력
 		if(result == -1) {
