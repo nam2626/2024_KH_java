@@ -43,35 +43,15 @@ public class StudentService {
 		}
 	}
 	
-	
-	
-	private int searchStudentList(String studentNo) {
-		for(int i=0;i<list.size();i++) {
-			if(list.get(i).getStudentNo().equals(studentNo)) {
-				return i;
-			}
-		}
-		return -1;
-	}
-	
 	//학생 데이터 검색
 	public void searchStudent() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("학생 정보 검색을 시작합니다....");
-		//1. 검색할 학번 입력
 		System.out.print("검색할 학번 입력 : ");
 		String studentNo = sc.nextLine();
-		//2. 반복문을 이용해서 입력한 학번과 리스트에 저장된 학생 정보의 학번과 동일한 객체를 검색
-		//	 list.get(i).getStudentNo().equals(입력한 학번) --> true/false
-		int result = -1;
-		for(int i=0;i<list.size();i++) {
-			if(list.get(i).getStudentNo().equals(studentNo)) {
-				result = i;
-				break;
-			}
-		}
-		//3. 검색 결과는 검색결과가 있으면 해당 학생정보를 출력
-		//	 검색 결과가 없으면 '검색 결과가 없습니다' 출력
+
+		int result = list.indexOf(new StudentDTO(studentNo, null, null, 0));
+		
 		if(result == -1)
 			System.out.println("검색 결과가 없습니다.");
 		else
@@ -85,7 +65,7 @@ public class StudentService {
 		System.out.print("삭제할 학번 입력 : ");
 		String studentNo = sc.nextLine();
 		//2. 삭제할 데이터를 list에서 찾음
-		int result = searchStudentList(studentNo);
+		int result = list.indexOf(new StudentDTO(studentNo, null, null, 0));
 		//3. 검색 결과에 따라서 삭제할 데이터가 있으면 삭제 후 삭제가 완료 되었습니다. 메세지를 출력
 		//	 검색 결과가 없으면 삭제할 데이터가 없습니다.
 		//	 list.remove(인덱스번호);   
@@ -103,7 +83,7 @@ public class StudentService {
 		System.out.print("수정할 학번 입력 : ");
 		String studentNo = sc.nextLine();
 		//2. 수정할 학생 정보를 검색
-		int result = searchStudentList(studentNo);
+		int result = list.indexOf(new StudentDTO(studentNo, null, null, 0));
 		
 		//3. 수정할 학생 정보가 있으면, 이름, 학과명, 평점을 입력받아서 수정
 		//	 수정할 학생 정보가 없으면, '수정할 학생정보가 없습니다.' 메세지를 출력
