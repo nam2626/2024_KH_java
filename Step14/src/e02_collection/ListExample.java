@@ -68,6 +68,20 @@ public class ListExample {
 		}
 		System.out.println("---------------");
 
+		//해당 데이터가 리스트에 있냐?
+		System.out.println(list.contains("자바"));
+		System.out.println(list.contains("C#"));
+		
+		//데이터가 몇번째 위치에 있는지?
+		System.out.println(list.indexOf("자바"));
+		System.out.println(list.indexOf("jsp"));
+		
+		//리스트에 있는 모든 데이터를 삭제
+//		list.clear();
+		System.out.println(list);
+		
+		//리스트가 비었냐?
+		System.out.println(list.isEmpty());
 		
 	}
 
