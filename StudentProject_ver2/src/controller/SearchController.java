@@ -5,7 +5,9 @@ import java.util.Scanner;
 import dto.StudentDTO;
 import service.StudentService;
 
-public class SearchController {
+public class SearchController extends Controller {
+	
+	@Override
 	public void execute() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("학생 정보 검색을 시작합니다....");

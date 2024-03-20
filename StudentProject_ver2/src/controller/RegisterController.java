@@ -6,7 +6,9 @@ import dto.StudentDTO;
 import service.StudentService;
 
 //학생 정보 등록하는 컨트롤러
-public class RegisterController {
+public class RegisterController extends Controller{
+	
+	@Override
 	public void execute() {
 		//1. 사용자로부터 데이터를 입력 받음
 		Scanner sc = new Scanner(System.in);
