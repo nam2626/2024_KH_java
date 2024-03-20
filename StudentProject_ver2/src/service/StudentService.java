@@ -22,24 +22,12 @@ public class StudentService {
 		list.add(new StudentDTO("20202000", "류현진", "컴퓨터소프트웨어학과", 3.1));
 	}
 	//학생 데이터 추가
-	public void addStudent() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("학생 정보 등록을 시작합니다.....");
-		System.out.print("학번 입력 : ");
-		String studentNo = sc.nextLine();
-		System.out.print("이름 입력 : ");
-		String studentName = sc.nextLine();
-		System.out.print("학과명 입력 : ");
-		String majorName = sc.nextLine();
-		System.out.print("평점 입력 : ");
-		double score = sc.nextDouble();
-		sc.nextLine();
-		StudentDTO dto = new StudentDTO(studentNo, studentName, majorName, score);
+	public boolean addStudent(StudentDTO dto) {
 		if(!list.contains(dto)) {
 			list.add(dto);
-			System.out.println("데이터 등록 성공");
+			return true;//데이터 등록에 성공 했을때 결과값
 		}else {
-			System.out.println("데이터 등록 실패, 중복된 학번이 있습니다.");
+			return false;//데이터 등록에 실패 했을때 결과값
 		}
 	}
 	
