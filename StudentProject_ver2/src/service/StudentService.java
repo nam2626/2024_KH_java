@@ -1,6 +1,7 @@
 package service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 import dto.StudentDTO;
@@ -70,6 +71,18 @@ public class StudentService {
 		for (StudentDTO dto : list) {
 			if(dto.getScore() >= 3.0)
 				r.add(dto);
+		}
+		
+		return r;
+	}
+
+	public ArrayList<StudentDTO> searchNameStudent(String name) {
+		ArrayList<StudentDTO> r = new ArrayList<StudentDTO>();
+		
+		for(int i=0;i<list.size();i++) {
+			//문자열 검색시 해당 문자열이 없으면 인덱스번호 -1을 리턴
+			if(list.get(i).getStudentName().indexOf(name) != -1)
+				r.add(list.get(i));
 		}
 		
 		return r;

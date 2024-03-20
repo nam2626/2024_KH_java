@@ -20,6 +20,7 @@ public class StudentMain {
 			System.out.println("4. 학생정보 수정");
 			System.out.println("5. 전체 학생정보 조회");
 			System.out.println("6. 평점이 3.0 이상인 학생들을 조회");
+			System.out.println("7. 학생 이름으로 검색");
 			System.out.println("0. 프로그램 종료");
 			System.out.print("원하시는 메뉴 번호를 입력 : ");
 			
