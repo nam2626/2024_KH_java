@@ -2,6 +2,8 @@ package main;
 
 import java.util.Scanner;
 
+import controller.Controller;
+import controller.HandlerMapping;
 import controller.RegisterController;
 import controller.SearchController;
 import service.StudentService;
@@ -25,7 +27,10 @@ public class StudentMain {
 			sc.nextLine();
 			if(n == 0) break;
 			
+			Controller controller = HandlerMapping.getInstance().createController(n);
 			
+			if(controller != null)
+				controller.execute();
 		}
 	}
 
