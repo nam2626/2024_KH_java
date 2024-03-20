@@ -59,36 +59,6 @@ public class StudentService {
 		list.remove(result);
 		return true;
 	}
-	//학생 데이터 수정
-	public void updateStudent() {
-		System.out.println("학생정보 수정을 시작합니다....");
-		Scanner sc = new Scanner(System.in);
-		//1. 수정할 학생의 학번을 입력
-		System.out.print("수정할 학번 입력 : ");
-		String studentNo = sc.nextLine();
-		//2. 수정할 학생 정보를 검색
-//		int result = searchStudentList(studentNo);
-		int result = list.indexOf(new StudentDTO(studentNo, null, null, 0));
-
-		//3. 수정할 학생 정보가 있으면, 이름, 학과명, 평점을 입력받아서 수정
-		//	 수정할 학생 정보가 없으면, '수정할 학생정보가 없습니다.' 메세지를 출력
-		if(result == -1) {
-			System.out.println("수정할 학생 정보가 없습니다.");
-			return;
-		}
-		System.out.print("수정할 이름 입력 : ");
-		String studentName = sc.nextLine();
-		System.out.print("수정할 학과명 입력 : ");
-		String majorName = sc.nextLine();
-		System.out.print("수정할 평점 입력 : ");
-		double score = sc.nextDouble();
-		sc.nextLine();
-		
-		StudentDTO dto = list.get(result);
-		dto.setStudentName(studentName);
-		dto.setMajorName(majorName);
-		dto.setScore(score);
-	}
 
 	public ArrayList<StudentDTO> getList() {
 		return list;
