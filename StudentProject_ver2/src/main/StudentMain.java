@@ -2,6 +2,7 @@ package main;
 
 import java.util.Scanner;
 
+import controller.RegisterController;
 import service.StudentService;
 
 public class StudentMain {
@@ -25,7 +26,8 @@ public class StudentMain {
 			
 			switch(n) {
 			case 1:
-				service.addStudent();
+				RegisterController register = new RegisterController();
+				register.execute();
 				break;
 			case 2:
 				service.searchStudent();
