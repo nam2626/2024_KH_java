@@ -17,21 +17,16 @@ public class HandlerMapping {
 		
 		switch(n) {
 		case 1:
-			RegisterController register = new RegisterController();
-			register.execute();
+			controller = new RegisterController();
 			break;
 		case 2:
-			SearchController search = new SearchController();
-			search.execute();
+			controller = new SearchController();
 			break;
 		case 3:
-			service.deleteStudent();
 			break;
 		case 4:
-			service.updateStudent();
 			break;
 		case 5:
-			service.printAllStudent();
 			break;
 		}
 		
