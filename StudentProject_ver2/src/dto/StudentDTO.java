@@ -54,13 +54,13 @@ public class StudentDTO {
 
 	@Override
 	public int hashCode() {
-		System.out.println("hashCode");
+//		System.out.println("hashCode");
 		return Objects.hash(studentNo);
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		System.out.println("equals");
+//		System.out.println("equals");
 		if (this == obj)
 			return true;
 		if (!(obj instanceof StudentDTO))

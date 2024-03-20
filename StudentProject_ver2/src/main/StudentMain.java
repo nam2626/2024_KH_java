@@ -3,6 +3,7 @@ package main;
 import java.util.Scanner;
 
 import controller.RegisterController;
+import controller.SearchController;
 import service.StudentService;
 
 public class StudentMain {
@@ -30,7 +31,8 @@ public class StudentMain {
 				register.execute();
 				break;
 			case 2:
-				service.searchStudent();
+				SearchController search = new SearchController();
+				search.execute();
 				break;
 			case 3:
 				service.deleteStudent();

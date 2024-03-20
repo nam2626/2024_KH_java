@@ -41,18 +41,13 @@ public class StudentService {
 	}
 	
 	//학생 데이터 검색
-	public void searchStudent() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("학생 정보 검색을 시작합니다....");
-		System.out.print("검색할 학번 입력 : ");
-		String studentNo = sc.nextLine();
-
+	public StudentDTO searchStudent(String studentNo) {
 		int result = list.indexOf(new StudentDTO(studentNo, null, null, 0));
 		
 		if(result == -1)
-			System.out.println("검색 결과가 없습니다.");
+			return null;
 		else
-			list.get(result).printInfo();
+			return list.get(result);
 	}
 	//학생 데이터 삭제
 	public void deleteStudent() {
