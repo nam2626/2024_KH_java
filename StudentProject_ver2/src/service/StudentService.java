@@ -50,24 +50,14 @@ public class StudentService {
 			return list.get(result);
 	}
 	//학생 데이터 삭제
-	public void deleteStudent() {
-		System.out.println("학생정보 삭제를 시작합니다....");
-		Scanner sc = new Scanner(System.in);
-		//1. 삭제할 학번을 입력 받음
-		System.out.print("삭제할 학번 입력 : ");
-		String studentNo = sc.nextLine();
-		//2. 삭제할 데이터를 list에서 찾음
-//		int result = searchStudentList(studentNo);
+	public boolean deleteStudent(String studentNo) {
 		int result = list.indexOf(new StudentDTO(studentNo, null, null, 0));
 
-		//3. 검색 결과에 따라서 삭제할 데이터가 있으면 삭제 후 삭제가 완료 되었습니다. 메세지를 출력
-		//	 검색 결과가 없으면 삭제할 데이터가 없습니다.
-		//	 list.remove(인덱스번호);   
 		if(result == -1)
-			System.out.println("삭제할 데이터가 없습니다.");
-		else
-			list.remove(result);
+			return false;
 		
+		list.remove(result);
+		return true;
 	}
 	//학생 데이터 수정
 	public void updateStudent() {
@@ -99,13 +89,9 @@ public class StudentService {
 		dto.setMajorName(majorName);
 		dto.setScore(score);
 	}
-	//전체 학생 데이터 출력
-	public void printAllStudent() {
-		System.out.println("전체 학생정보를 출력합니다........");
-		for(int i=0;i<list.size();i++) {
-			list.get(i).printInfo();
-		}
-		System.out.println();
+
+	public ArrayList<StudentDTO> getList() {
+		return list;
 	}
 }
 

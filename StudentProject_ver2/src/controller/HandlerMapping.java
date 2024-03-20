@@ -23,10 +23,12 @@ public class HandlerMapping {
 			controller = new SearchController();
 			break;
 		case 3:
+			controller = new DeleteController();
 			break;
 		case 4:
 			break;
 		case 5:
+			controller = new PrintAllController();
 			break;
 		}
 		
