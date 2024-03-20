@@ -2,6 +2,7 @@ package controller;
 
 import java.util.Scanner;
 
+import dto.StudentDTO;
 import service.StudentService;
 
 //학생 정보 등록하는 컨트롤러
@@ -19,11 +20,23 @@ public class RegisterController {
 		System.out.print("평점 입력 : ");
 		double score = sc.nextDouble();
 		sc.nextLine();
-		//2. StudentService로 보냄
 		StudentService service = new StudentService();
-		service.addStudent();
-		
+		//2. StudentService로 보냄
 		//3. StudentService에서 보낸 결과값을 받음
+		boolean result = service.addStudent(
+				new StudentDTO(studentNo, studentName, majorName, score));
 		//4. 데이터 등록 성공 여부를 출력
+		if(result)
+			System.out.println("학생 정보 등록 완료");
+		else
+			System.out.println("학생 정보 등록 실패");
 	}
 }
+
+
+
+
+
+
+
+
