@@ -6,9 +6,11 @@ import java.util.Scanner;
 import dto.StudentDTO;
 
 public class StudentService {
+	private static StudentService instance = new StudentService();
+	
 	private ArrayList<StudentDTO> list;
 
-	public StudentService() {
+	private StudentService() {
 		list = new ArrayList<StudentDTO>();
 		list.add(new StudentDTO("20201111", "김철수", "컴퓨터공학과", 3.4));
 		list.add(new StudentDTO("20201222", "이영희", "경영학과", 3.8));
@@ -21,6 +23,13 @@ public class StudentService {
 		list.add(new StudentDTO("20201999", "이승엽", "전자공학과", 3.3));
 		list.add(new StudentDTO("20202000", "류현진", "컴퓨터소프트웨어학과", 3.1));
 	}
+	
+	public static StudentService getInstance() {
+		if(instance == null)
+			instance = new StudentService();
+		return instance;
+	}
+	
 	//학생 데이터 추가
 	public boolean addStudent(StudentDTO dto) {
 		if(!list.contains(dto)) {
