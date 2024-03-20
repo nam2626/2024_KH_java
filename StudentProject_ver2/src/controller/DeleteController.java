@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import service.StudentService;
 
-public class DeleteController extends Controller {
+public class DeleteController implements Controller {
 	@Override
 	public void execute() {
 		System.out.println("학생정보 삭제를 시작합니다....");

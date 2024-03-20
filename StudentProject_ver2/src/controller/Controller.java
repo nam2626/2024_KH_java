@@ -1,5 +1,5 @@
 package controller;
 
-public abstract class Controller {
-	public abstract void execute();
+public interface Controller {
+	public void execute();
 }

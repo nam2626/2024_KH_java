@@ -5,7 +5,7 @@ import java.util.Scanner;
 import dto.StudentDTO;
 import service.StudentService;
 
-public class UpdateController extends Controller {
+public class UpdateController implements Controller {
 
 	@Override
 	public void execute() {

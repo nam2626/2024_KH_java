@@ -6,7 +6,7 @@ import dto.StudentDTO;
 import service.StudentService;
 
 //학생 정보 등록하는 컨트롤러
-public class RegisterController extends Controller{
+public class RegisterController implements Controller{
 	
 	@Override
 	public void execute() {

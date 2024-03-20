@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import dto.StudentDTO;
 import service.StudentService;
 
-public class PrintAllController extends Controller {
+public class PrintAllController implements Controller {
 
 	@Override
 	public void execute() {

@@ -6,7 +6,7 @@ import java.util.Scanner;
 import dto.StudentDTO;
 import service.StudentService;
 
-public class SearchNameController extends Controller {
+public class SearchNameController implements Controller {
 
 	@Override
 	public void execute() {

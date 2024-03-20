@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import dto.StudentDTO;
 import service.StudentService;
 
-public class FilterController extends Controller {
+public class FilterController implements Controller {
 	@Override
 	public void execute() {
 		System.out.println("평점이 3.0이상인 데이터를 조회합니다....");
