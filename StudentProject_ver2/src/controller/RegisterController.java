@@ -20,7 +20,7 @@ public class RegisterController {
 		System.out.print("평점 입력 : ");
 		double score = sc.nextDouble();
 		sc.nextLine();
-		StudentService service = new StudentService();
+		StudentService service = StudentService.getInstance();
 		//2. StudentService로 보냄
 		//3. StudentService에서 보낸 결과값을 받음
 		boolean result = service.addStudent(
