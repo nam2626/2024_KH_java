@@ -12,7 +12,6 @@ public class StudentMain {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		StudentService service = StudentService.getInstance();
 		
 		while (true) {
 			System.out.println("1. 학생정보 등록");
@@ -20,6 +19,7 @@ public class StudentMain {
 			System.out.println("3. 학생정보 삭제");
 			System.out.println("4. 학생정보 수정");
 			System.out.println("5. 전체 학생정보 조회");
+			System.out.println("6. 평점이 3.0 이상인 학생들을 조회");
 			System.out.println("0. 프로그램 종료");
 			System.out.print("원하시는 메뉴 번호를 입력 : ");
 			

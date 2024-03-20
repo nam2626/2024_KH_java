@@ -63,6 +63,17 @@ public class StudentService {
 	public ArrayList<StudentDTO> getList() {
 		return list;
 	}
+	
+	public ArrayList<StudentDTO> filterStudent(){
+		ArrayList<StudentDTO> r = new ArrayList<StudentDTO>();
+		
+		for (StudentDTO dto : list) {
+			if(dto.getScore() >= 3.0)
+				r.add(dto);
+		}
+		
+		return r;
+	}
 }
 
 
