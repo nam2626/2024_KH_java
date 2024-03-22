@@ -4,8 +4,8 @@ Exception
 	Exception을 이용해서 중간에 에러가 발생한 것을 잡아서 처리하고, 
 	코드를 계속 이어서 작업하게끔 하는 처리방법
 	
-try
-catch
-finally
+try : 작업 영역, 대신에 이 영역에서는 Exception 발생 할 있다.
+catch : try 영역에서 Exception이 발생 했을 때 Exception을 처리하는 영역
+finally : Exception이 발생 하든 안하든 반드시 실행되는 영역
 throw
 throws
