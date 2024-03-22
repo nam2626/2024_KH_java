@@ -24,13 +24,26 @@ public class CalendarTest {
 		System.out.println(calendar.get(Calendar.HOUR_OF_DAY));
 		System.out.println(calendar.get(Calendar.HOUR));
 		//분
-		
+		System.out.println(calendar.get(Calendar.MINUTE));
 		//초
-		
+		System.out.println(calendar.get(Calendar.SECOND));
 		//밀리초
+		System.out.println(calendar.get(Calendar.MILLISECOND));
+		
+		System.out.println(calendar.getTime());
+		
+		calendar.set(Calendar.YEAR, 1962);
+		System.out.println(calendar.getTime());
+		calendar.set(Calendar.DAY_OF_MONTH, 32);
+		System.out.println(calendar.getTime());
+		calendar.set(Calendar.DAY_OF_MONTH, 0);
+		System.out.println(calendar.getTime());
 	}
 
 }
+
+
+
 
 
 
