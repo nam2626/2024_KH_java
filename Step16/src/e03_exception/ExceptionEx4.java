@@ -20,14 +20,13 @@ public class ExceptionEx4 {
 			n1 = sc.nextInt();
 			System.out.print("숫자 입력 : ");
 			n2 = sc.nextInt();
-		}catch (InputMismatchException e) {
-			System.out.println("숫자만 입력하세요");
-		}
 		
-		try {
 			System.out.println(div(n1,n2));
+			
 		}catch (ArithmeticException e) {
 			System.out.println("0으로 나눌 수 없습니다.");
+		}catch (InputMismatchException e) {
+			System.out.println("숫자만 입력하세요");
 		}
 	}
 
