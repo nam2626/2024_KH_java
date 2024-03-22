@@ -73,7 +73,7 @@ public class StudentService {
 		return r;
 	}
 
-	public ArrayList<StudentDTO> searchNameStudent(String name) {
+	public ArrayList<StudentDTO> searchNameStudent(String name) throws StudentException {
 		ArrayList<StudentDTO> r = new ArrayList<StudentDTO>();
 		
 		for(int i=0;i<list.size();i++) {
@@ -81,6 +81,10 @@ public class StudentService {
 			if(list.get(i).getStudentName().indexOf(name) != -1)
 				r.add(list.get(i));
 		}
+		
+		if(r.isEmpty())
+			throw new StudentException(name+"에 대한 검색 결과가 없습니다.");
+		
 		
 		return r;
 	}
