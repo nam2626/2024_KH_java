@@ -38,6 +38,9 @@ public class CalendarTest {
 		System.out.println(calendar.getTime());
 		calendar.set(Calendar.DAY_OF_MONTH, 0);
 		System.out.println(calendar.getTime());
+		
+		calendar.setTimeInMillis(0);
+		System.out.println(calendar.getTime());
 	}
 
 }
