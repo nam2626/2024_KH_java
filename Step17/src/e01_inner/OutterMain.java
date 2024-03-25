@@ -1,6 +1,7 @@
 package e01_inner;
 
 import e01_inner.Outter.Inner;
+import e01_inner.OutterStaticInnerClass.InnerStaticClass;
 
 public class OutterMain {
 
@@ -22,6 +23,10 @@ public class OutterMain {
 		inner3.printInner();
 		inner4.printInner();
 		
+		OutterStaticInnerClass osc = new OutterStaticInnerClass(100);
+		InnerStaticClass innerStaticClass = 
+				new OutterStaticInnerClass.InnerStaticClass(50);
+		System.out.println(innerStaticClass.sum());
 	}
 
 }
