@@ -56,10 +56,14 @@ public class DateFormat {
 		System.out.println(sdf.format(cal.getTime()));
 		
 		//2023-05-25 14:26:30
-
+		sdf.applyPattern("yyyy-MM-dd HH:mm:ss");
+		System.out.println(sdf.format(cal.getTime()));
 		//2022년 12월 05일 12시 35분 55초
-		
+		sdf.applyPattern("yyyy년 MM월 dd일 HH시 mm분 ss초");
+		System.out.println(sdf.format(cal.getTime()));
 		//2023_05_25_14_26_30
+		sdf.applyPattern("yyyy_MM_dd_HH_mm_ss");
+		System.out.println(sdf.format(cal.getTime()));
 	}
 
 }
