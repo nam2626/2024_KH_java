@@ -15,7 +15,6 @@ public class LamdaEx2 {
 		
 		calc(10,5,(x, y) -> x + y);  
 		
-		
 	}
 
 }
