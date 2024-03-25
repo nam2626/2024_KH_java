@@ -18,6 +18,29 @@ public class PlayerMain {
 		
 		Player p = new Player(k2);
 		p.shot();
+		
+		p.setGun(new Gun() {
+			
+			@Override
+			public void shot() {
+				System.out.println("AK47 shot()");
+			}
+			
+			@Override
+			public void reload() {
+				System.out.println("AK47 reload()");
+			}
+		});
+		p.shot();
+		p.reload();
 	}
 
 }
+
+
+
+
+
+
+
+
