@@ -1,7 +1,7 @@
 package e04_lamda;
 
 public class LamdaEx3 {
-	public static void run(Method<T> m, T val) {
+	public static <T> void run(Method<T> m, T val) {
 		m.run(val);
 	}
 	
