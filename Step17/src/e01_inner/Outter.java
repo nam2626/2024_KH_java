@@ -22,6 +22,10 @@ public class Outter {
 			return inner + outter;
 		}
 		
+		public void printInner() {
+			System.out.println(outter + " -> " + inner);
+		}
+		
 	}
 }
 
