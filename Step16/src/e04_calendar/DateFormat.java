@@ -2,6 +2,7 @@ package e04_calendar;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class DateFormat {
 
@@ -36,6 +37,8 @@ public class DateFormat {
 		System.out.println(sdf.format(cal.getTime()));
 		sdf.applyPattern("HH");//시간 2자리 - 24시간 기준
 		System.out.println(sdf.format(cal.getTime()));
+		sdf.applyPattern("a");
+		System.out.println(sdf.format(cal.getTime()));
 		sdf.applyPattern("h"); //시간 1자리 - 12시간 기준
 		System.out.println(sdf.format(cal.getTime()));
 		sdf.applyPattern("hh");//시간 2자리 - 12시간 기준
@@ -49,8 +52,14 @@ public class DateFormat {
 		sdf.applyPattern("ss");//초 2자리
 		System.out.println(sdf.format(cal.getTime()));
 		
+		sdf = new SimpleDateFormat("yyyy-MMMM-dd(EEEE) a HH-mm-ss", Locale.ENGLISH);
+		System.out.println(sdf.format(cal.getTime()));
 		
+		//2023-05-25 14:26:30
+
+		//2022년 12월 05일 12시 35분 55초
 		
+		//2023_05_25_14_26_30
 	}
 
 }
