@@ -69,6 +69,12 @@ public class StudentDTO {
 		return Objects.equals(studentNo, other.studentNo);
 	}
 
+	@Override
+	public String toString() {
+		return "StudentDTO [studentNo=" + studentNo + ", studentName=" + studentName + ", majorName=" + majorName
+				+ ", score=" + score + "]";
+	}
+
 	
 	
 }
