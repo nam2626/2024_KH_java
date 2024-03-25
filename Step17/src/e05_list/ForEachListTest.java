@@ -17,6 +17,13 @@ public class ForEachListTest {
 		list.add(new StudentDTO("S008", "최민지", "무용학과", 2.3));
 		list.add(new StudentDTO("S009", "배영호", "음악학과", 1.2));
 		list.add(new StudentDTO("S010", "송영철", "미술학과", 2.5));
+		
+		//리스트에 저장된 학생들의 평점의 평균
+		
+		//리스트에 저장된 학생들의 최고점을 가진 학생들을 조회
 	}
 
 }
+
+
+
