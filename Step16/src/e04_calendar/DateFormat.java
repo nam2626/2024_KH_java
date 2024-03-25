@@ -40,6 +40,14 @@ public class DateFormat {
 		System.out.println(sdf.format(cal.getTime()));
 		sdf.applyPattern("hh");//시간 2자리 - 12시간 기준
 		System.out.println(sdf.format(cal.getTime()));
+		sdf.applyPattern("m"); //분 1자리
+		System.out.println(sdf.format(cal.getTime()));
+		sdf.applyPattern("mm");//분 2자리
+		System.out.println(sdf.format(cal.getTime()));
+		sdf.applyPattern("s"); //초 1자리
+		System.out.println(sdf.format(cal.getTime()));
+		sdf.applyPattern("ss");//초 2자리
+		System.out.println(sdf.format(cal.getTime()));
 		
 		
 		
