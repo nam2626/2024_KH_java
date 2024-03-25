@@ -26,6 +26,10 @@ public class DateFormat {
 		System.out.println(sdf.format(cal.getTime()));
 		sdf.applyPattern("dd");//일 2자리
 		System.out.println(sdf.format(cal.getTime()));
+		sdf.applyPattern("E");//요일
+		System.out.println(sdf.format(cal.getTime()));
+		
+		
 	}
 
 }
