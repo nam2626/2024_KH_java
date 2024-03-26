@@ -13,8 +13,9 @@ public class ThreadMain {
 		
 		//list에 등록된 객체가 가지고 있는 start 메서드를 실행
 		//자동으로 일을 시키는 부분
-		for(int i=0;i<list.size();i++)
-			list.get(i).start();
+//		for(int i=0;i<list.size();i++)
+//			list.get(i).start();
+		list.forEach(item -> item.start());
 			
 	}
 
