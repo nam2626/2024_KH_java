@@ -12,7 +12,7 @@ public class JobInfo {
 		return instance;
 	}
 	
-	public void writeJob(String job) {
+	public synchronized void writeJob(String job) {
 		jobInfo = job;//구직 정보 저장
 		notifyAll();//현재 대기중인 모든 스레드를 깨움
 	}
