@@ -20,5 +20,5 @@ public class LamdaEx3 {
 		run(m3, 3.5);
 		
 	}
-
+ 
 }
