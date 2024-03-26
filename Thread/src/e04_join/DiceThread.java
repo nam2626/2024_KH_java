@@ -44,6 +44,8 @@ public class DiceThread extends Thread{
 			if(dice1 + dice2 == 12)
 				break;
 		}
+		//벡터에 주사위 굴린 횟수 저장
+		list.add(count);
 		System.out.println(getName() + "@" + count);
 	}
 	
