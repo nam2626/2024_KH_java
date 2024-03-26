@@ -1,6 +1,10 @@
 package e01_init;
 
 public class ThreadRun extends Thread{
+	
+	public ThreadRun(String name) {
+		super(name);
+	}
 
 	@Override
 	public void run() {
