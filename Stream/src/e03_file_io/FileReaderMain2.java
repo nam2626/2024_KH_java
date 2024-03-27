@@ -8,11 +8,9 @@ import java.io.IOException;
 public class FileReaderMain2 {
 
 	public static void main(String[] args) {
-		FileReader fr = null;
-		BufferedReader br = null;
-		try {
-			fr = new FileReader("hello.txt");
-			br = new BufferedReader(fr);
+		
+		try (FileReader fr = new FileReader("hello.txt");
+			 BufferedReader br = new BufferedReader(fr);){
 
 			while (true) {
 				String str = br.readLine();
@@ -20,6 +18,7 @@ public class FileReaderMain2 {
 					break;
 				System.out.println(str);
 			}
+
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
