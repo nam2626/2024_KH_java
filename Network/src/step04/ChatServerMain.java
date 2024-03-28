@@ -5,7 +5,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 
-public class MultiEchoServerMain {
+public class ChatServerMain {
 	//사용자와의 통신을 담당할 스레드를 저장
 	public static ArrayList<ServerWorker> list = new ArrayList<ServerWorker>();
 	public static void main(String[] args) {
@@ -30,5 +30,16 @@ public class MultiEchoServerMain {
 		}
 		System.out.println("서버 프로그램 종료");
 	}
+	//모든 클라이언트에게 메세지를 전송하는 메서드
+	public static void broadCasting(String message) {
+		for(int i=0;i<list.size();i++) {
+			list.get(i).sendMessage(message);
+		}
+	}
 
 }
+
+
+
+
+

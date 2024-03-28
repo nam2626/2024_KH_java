@@ -8,9 +8,14 @@ import java.net.Socket;
 
 public class ServerWorker extends Thread{
 	private Socket client;
-
+	private PrintWriter pw;
 	public ServerWorker(Socket client) {
 		this.client = client;
+		try {
+			pw = new PrintWriter(client.getOutputStream(),true);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@Override
@@ -22,23 +27,19 @@ public class ServerWorker extends Thread{
 			while(true) {
 				String msg = br.readLine();
 				if(msg.equals("exit")) break;
-				MultiEchoServerMain.broadCasting(client.getInetAddress() + "님의 메세지 : " + msg);
+				ChatServerMain.broadCasting(client.getInetAddress() + "님의 메세지 : " + msg);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		System.out.println(client.getInetAddress() + "님이 접속 종료하였습니다.");
-		MultiEchoServerMain.list.remove(this);
-		System.out.println("현재 접속 중인 인원수는 " + MultiEchoServerMain.list.size() +"명 입니다.");
+		ChatServerMain.list.remove(this);
+		System.out.println("현재 접속 중인 인원수는 " + ChatServerMain.list.size() +"명 입니다.");
 		
 	}
 
 	public void sendMessage(String message) {
-		try(PrintWriter pw = new PrintWriter(client.getOutputStream(),true);){
-			pw.println(message);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		pw.println(message);
 	}
 }
 
