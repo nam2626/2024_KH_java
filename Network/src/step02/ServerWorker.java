@@ -33,6 +33,9 @@ public class ServerWorker extends Thread{
 			e.printStackTrace();
 		}
 		System.out.println(client.getInetAddress() + "님이 접속 종료하였습니다.");
+		MultiEchoServerMain.list.remove(this);
+		System.out.println("현재 접속 중인 인원수는 " + MultiEchoServerMain.list.size() +"명 입니다.");
+		
 	}
 	
 }

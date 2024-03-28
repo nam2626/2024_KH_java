@@ -1,14 +1,13 @@
 package step02;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 
-public class EchoServerMain {
-
+public class MultiEchoServerMain {
+	//사용자와의 통신을 담당할 스레드를 저장
+	public static ArrayList<ServerWorker> list = new ArrayList<ServerWorker>();
 	public static void main(String[] args) {
 		//1. 서버 오픈
 		try(ServerSocket server = new ServerSocket(1234);){
@@ -22,6 +21,8 @@ public class EchoServerMain {
 				//3. 스레드 생성 및 실행
 				ServerWorker sw = new ServerWorker(client);
 				sw.start();
+				list.add(sw);
+				System.out.println("현재 접속 중인 인원수는 " + list.size() + "명 입니다.");
 			}
 			
 		} catch (IOException e) {
