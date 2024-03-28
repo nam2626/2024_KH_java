@@ -13,13 +13,13 @@ public class FileCopyTest {
 		// 3. A에서 데이터를 읽어오고, B에다가 출력 --> 3번 과정을 반복해서 끝나면 파일복사가 완료된 시점
 		try (FileInputStream fis = new FileInputStream("c:\\test\\moon.jpg");
 				FileOutputStream fos = new FileOutputStream("c:\\test\\new_moon.jpg");) {
-
+			byte[] buffer = new byte[1024];
 			long startTime = System.currentTimeMillis();
 			while (true) {
-				int n = fis.read();
+				int n = fis.read(buffer);
 				if (n == -1)
 					break;
-				fos.write(n);
+				fos.write(buffer,0,n);
 			}
 			fos.flush();
 			long endTime = System.currentTimeMillis();
