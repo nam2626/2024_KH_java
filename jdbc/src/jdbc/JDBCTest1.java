@@ -28,9 +28,11 @@ public class JDBCTest1 {
 			//6. 결과 출력
 			while(rs.next()) {
 				/*
+				 * //컬럼 번호 순서로 뽑음
 				 * System.out.println(rs.getString(1) + " " + rs.getString(2) + " "
 				 * +rs.getInt(3));
 				 */
+				//컬럼명으로 뽑음
 				System.out.println(rs.getString("PID") + " " 
 						+ rs.getString("PNAME") + " " +rs.getInt("AGE"));
 			}
