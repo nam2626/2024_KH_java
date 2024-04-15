@@ -8,18 +8,13 @@ import java.sql.Statement;
 
 import oracle.jdbc.pool.OracleDataSource;
 
-public class JDBCTest4 {
+public class JDBCTest5 {
 
 	public static void main(String[] args) {
-		OracleDataSource ods = null;
+		OracleDataSource ods;
 		try {
 			ods = new OracleDataSource();
-			String url = "jdbc:oracle:thin:@127.0.0.1:1521/xe";
-			String user = "c##scott";
-			String passwd = "123456";
-			ods.setURL(url);
-			ods.setUser(user);
-			ods.setPassword(passwd);
+			ods.setURL("jdbc:oracle:thin:c##scott/123456@127.0.0.1:1521:xe");
 			Connection conn = ods.getConnection();
 			
 			String sql = "SELECT * FROM PERSON";
