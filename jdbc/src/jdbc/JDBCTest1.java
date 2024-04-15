@@ -27,8 +27,12 @@ public class JDBCTest1 {
 			ResultSet rs = stmt.executeQuery(sql);
 			//6. 결과 출력
 			while(rs.next()) {
-				System.out.println(rs.getString(1) + " " 
-							+ rs.getString(2) + " " +rs.getInt(3));
+				/*
+				 * System.out.println(rs.getString(1) + " " + rs.getString(2) + " "
+				 * +rs.getInt(3));
+				 */
+				System.out.println(rs.getString("PID") + " " 
+						+ rs.getString("PNAME") + " " +rs.getInt("AGE"));
 			}
 			//7. close
 			rs.close();
