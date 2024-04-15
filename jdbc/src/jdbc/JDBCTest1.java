@@ -2,7 +2,9 @@ package jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class JDBCTest1 {
 
@@ -18,11 +20,21 @@ public class JDBCTest1 {
 							"c##scott", "123456");
 			System.out.println("DB 접속완료");
 			//3. SQL문 작성
-			
+			String sql = "SELECT * FROM PERSON";
 			//4. Statement 객체 생성
+			Statement stmt = conn.createStatement();
 			//5. Statement 객체를 사용해서 SQL문 실행
+			ResultSet rs = stmt.executeQuery(sql);
 			//6. 결과 출력
+			while(rs.next()) {
+				System.out.println(rs.getString(1) + " " 
+							+ rs.getString(2) + " " +rs.getInt(3));
+			}
 			//7. close
+			rs.close();
+			stmt.close();
+			conn.close();
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}catch (SQLException e) {
