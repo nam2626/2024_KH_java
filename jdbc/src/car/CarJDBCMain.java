@@ -157,11 +157,38 @@ public class CarJDBCMain {
 		}
 	}
 	public static void main(String[] args) {
-//		selectAllCar();
-//		insertCar();
-//		deleteCar();
-//		updateCar();
-		selectCarName();
+		Scanner sc = new Scanner(System.in);
+		while(true) {
+			System.out.println("1. 전체 자동차 정보 조회");
+			System.out.println("2. 자동차 정보 등록");
+			System.out.println("3. 자동차 정보 삭제");
+			System.out.println("4. 자동차 금액 할인");
+			System.out.println("5. 자동차 검색");
+			System.out.println("0. 프로그램 종료");
+			System.out.print("원하시는 번호 입력 :");
+			int no = sc.nextInt();
+			sc.nextLine();
+			
+			if(no == 0) break;
+			
+			switch(no) {
+			case 1:
+				selectAllCar();
+				break;
+			case 2:
+				insertCar();
+				break;
+			case 3:
+				deleteCar();
+				break;
+			case 4:
+				updateCar();
+				break;
+			case 5:
+				selectCarName();
+				break;
+			}
+		}
 	}
 }
 
