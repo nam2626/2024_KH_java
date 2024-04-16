@@ -81,6 +81,27 @@ public class CarJDBCMain {
 	}
 	public static void deleteCar() {
 		//삭제할 자동차 ID를 입력 받아서 CAR 테이블에서 삭제 처리
+		Scanner sc = new Scanner(System.in);
+		System.out.print("자동차 아이디 : ");
+		String carId = sc.nextLine();
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = DBManager.getInstance().getConnection();
+			String sql = "delete from car where car_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, carId);
+			
+			int count = pstmt.executeUpdate();
+			System.out.println(count + "건 삭제 됨");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.getInstance().close(conn, pstmt, null);
+		}
+		
 	}
 	public static void updateCar() {
 		//자동차 금액이 평균 이상인 애들은 금액 10% 할인가로 수정, 소수점은 절삭 
@@ -91,7 +112,8 @@ public class CarJDBCMain {
 	}
 	public static void main(String[] args) {
 //		selectAllCar();
-		insertCar();
+//		insertCar();
+		deleteCar();
 	}
 }
 
