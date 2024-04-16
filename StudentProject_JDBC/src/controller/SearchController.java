@@ -19,7 +19,7 @@ public class SearchController implements Controller {
 		if(dto == null) {
 			System.out.println("학번에 해당하는 검색 결과가 없습니다.");
 		}else {
-			dto.printInfo();
+			dto.printStudentInfo();
 		}
 		
 	}

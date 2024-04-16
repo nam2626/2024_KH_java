@@ -28,7 +28,7 @@ public class StudentService {
 	
 	//학생 데이터 검색
 	public StudentDTO searchStudent(String studentNo) {
-		return null;
+		return StudentDAO.getInstance().selectStudent(studentNo);
 	}
 	//학생 데이터 삭제
 	public boolean deleteStudent(String studentNo) {
