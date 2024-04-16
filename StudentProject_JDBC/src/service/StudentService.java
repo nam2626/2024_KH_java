@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
+import dao.StudentDAO;
 import dto.StudentDTO;
 import exception.StudentException;
 
@@ -47,6 +48,10 @@ public class StudentService {
 			throw new StudentException(name+"에 대한 검색 결과가 없습니다.");
 		
 		return r;
+	}
+
+	public ArrayList<StudentDTO> selectAllStudent() {
+		return StudentDAO.getInstance().selectAllStudent();
 	}
 }
 
