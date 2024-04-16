@@ -21,7 +21,7 @@ public class SearchNameController implements Controller {
 			= StudentService.getInstance().searchNameStudent(name);
 
 			for (StudentDTO studentDTO : list) {
-				studentDTO.printInfo();
+				studentDTO.printStudentInfo();
 			}
 		
 		} catch (StudentException e) {
