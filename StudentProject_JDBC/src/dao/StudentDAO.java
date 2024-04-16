@@ -1,5 +1,8 @@
 package dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -32,11 +35,25 @@ public class StudentDAO {
 	}
 
 	public ArrayList<StudentDTO> selectAllStudent(){
-		
 		//학생 정보를 전부 읽어오는 작업
 		//학번 이름 학과명 평점 성별 --> 학과, 학생 테이블 조인해서 sql문 실행
+		String sql = "SELECT S.STD_NO, S.STD_NAME, "
+				+ "M.MAJOR_NAME, S.STD_SCORE, S.STD_GENDER "
+				+ "FROM STUDENT S JOIN MAJOR M "
+				+ "ON S.MAJOR_NO = M.MAJOR_NO";
 		
-		
+		try(Connection conn = ods.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);){
+			
+			try(ResultSet rs = pstmt.executeQuery()){
+				while(rs.next()) {
+					System.out.println(rs.getString(1) + " " + rs.getString(2));
+				}
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 	
