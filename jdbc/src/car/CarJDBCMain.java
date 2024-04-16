@@ -110,7 +110,8 @@ public class CarJDBCMain {
 		
 		try {
 			conn = DBManager.getInstance().getConnection();
-			String sql = "UPDATE CAR SET CAR_PRICE = TRUNC(CAR_PRICE * 0.9,0) WHERE CAR_PRICE >= (SELECT AVG(CAR_PRICE) FROM CAR)";
+			String sql = "UPDATE CAR SET CAR_PRICE = TRUNC(CAR_PRICE * 0.9,0)"
+					+ " WHERE CAR_PRICE >= (SELECT AVG(CAR_PRICE) FROM CAR)";
 			pstmt = conn.prepareStatement(sql);
 			
 			int count = pstmt.executeUpdate();
@@ -124,12 +125,43 @@ public class CarJDBCMain {
 	public static void selectCarName() {
 		//자동차 이름을 검색어 일부로 입력 받아서
 		//해당 검색어를 포함하고 있는 자동차들을 모두 조회
+		Scanner sc = new Scanner(System.in);
+		System.out.print("자동차 이름 일부 : ");
+		String carName = sc.nextLine();
+		String sql = "SELECT CAR_ID, CAR_NAME, CAR_MAKE_YEAR, "
+				+ "CAR_PRICE, CAR_MAKER_NAME "
+				+ "FROM CAR C JOIN CAR_MAKER CM "
+				+ "ON C.CAR_MAKER_CODE = CM.CAR_MAKER_CODE "
+				+ "where UPPER(C.CAR_NAME) LIKE UPPER('%' || ? || '%')";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = DBManager.getInstance().getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, carName);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				System.out.println(rs.getString(1) 
+						+ " " + rs.getString(2)
+						+ " " + rs.getInt(3)
+						+ " " + rs.getInt(4)
+						+ " " + rs.getString(5)
+						);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.getInstance().close(conn, pstmt, rs);
+		}
 	}
 	public static void main(String[] args) {
 //		selectAllCar();
 //		insertCar();
 //		deleteCar();
-		updateCar();
+//		updateCar();
+		selectCarName();
 	}
 }
 
