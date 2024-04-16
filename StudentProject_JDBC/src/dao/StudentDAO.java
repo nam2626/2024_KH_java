@@ -124,4 +124,33 @@ public class StudentDAO {
 		return dto;
 	}
 
+	public ArrayList<StudentDTO> selectScoreStudent() {
+		String sql = "SELECT S.STD_NO, S.STD_NAME, " + "M.MAJOR_NAME, S.STD_SCORE, S.STD_GENDER "
+				+ "FROM STUDENT S JOIN MAJOR M " + "ON S.MAJOR_NO = M.MAJOR_NO "
+						+ "WHERE S.STD_SCORE >= 3.0";
+
+		ArrayList<StudentDTO> list = new ArrayList<StudentDTO>();
+		try (Connection conn = ods.getConnection(); 
+				PreparedStatement pstmt = conn.prepareStatement(sql);) {
+			try (ResultSet rs = pstmt.executeQuery()) {
+				while (rs.next()) {
+					String studentNo = rs.getString(1);
+					String studentName = rs.getString(2);
+					String majorName = rs.getString(3);
+					double score = rs.getDouble(4);
+					char gender = rs.getString(5).charAt(0);
+					// 데이터를 꺼내서 StudentDTO 객체를 만들어서
+					// list에 등록
+					list.add(new StudentDTO(studentNo, studentName, 0,
+							majorName, score, gender));
+
+				}
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
 }

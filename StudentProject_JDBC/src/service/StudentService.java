@@ -36,9 +36,7 @@ public class StudentService {
 	}
 
 	public ArrayList<StudentDTO> filterStudent(){
-		ArrayList<StudentDTO> r = new ArrayList<StudentDTO>();
-		
-		return r;
+		return StudentDAO.getInstance().selectScoreStudent();
 	}
 
 	public ArrayList<StudentDTO> searchNameStudent(String name) throws StudentException {
