@@ -42,8 +42,9 @@ public class StudentService {
 	}
 
 	public ArrayList<StudentDTO> searchNameStudent(String name) throws StudentException {
-		ArrayList<StudentDTO> r = new ArrayList<StudentDTO>();
-		
+		ArrayList<StudentDTO> r = 
+				StudentDAO.getInstance().selectNameStudent(name);
+				
 		if(r.isEmpty())
 			throw new StudentException(name+"에 대한 검색 결과가 없습니다.");
 		
