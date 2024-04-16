@@ -105,6 +105,21 @@ public class CarJDBCMain {
 	}
 	public static void updateCar() {
 		//자동차 금액이 평균 이상인 애들은 금액 10% 할인가로 수정, 소수점은 절삭 
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = DBManager.getInstance().getConnection();
+			String sql = "UPDATE CAR SET CAR_PRICE = TRUNC(CAR_PRICE * 0.9,0) WHERE CAR_PRICE >= (SELECT AVG(CAR_PRICE) FROM CAR)";
+			pstmt = conn.prepareStatement(sql);
+			
+			int count = pstmt.executeUpdate();
+			System.out.println(count + "건 수정 됨");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.getInstance().close(conn, pstmt, null);
+		}
 	}
 	public static void selectCarName() {
 		//자동차 이름을 검색어 일부로 입력 받아서
@@ -113,7 +128,8 @@ public class CarJDBCMain {
 	public static void main(String[] args) {
 //		selectAllCar();
 //		insertCar();
-		deleteCar();
+//		deleteCar();
+		updateCar();
 	}
 }
 
