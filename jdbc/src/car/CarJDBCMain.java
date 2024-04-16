@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 import config.DBManager;
 
@@ -39,6 +40,44 @@ public class CarJDBCMain {
 	}
 	public static void insertCar() {
 		//자동차 정보한건 입력 받아서 CAR 테이블에 저장
+		//1. 자동차 정보 한건 입력 - Scanner
+		Scanner sc = new Scanner(System.in);
+		System.out.print("자동차 아이디 : ");
+		String carId = sc.nextLine();
+		System.out.print("자동차 이름 : ");
+		String carName = sc.nextLine();
+		System.out.print("자동차 제조 연도 : ");
+		int carMakeYear = sc.nextInt();sc.nextLine();
+		System.out.print("자동차 금액 : ");
+		int carPrice = sc.nextInt();sc.nextLine();
+		System.out.print("자동차 제조사 코드 : ");
+		String carMakerCode = sc.nextLine();
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		//2. SQL문 작성
+		String sql = "insert into car values(?,?,?,?,?)";
+		//3. Connection 받아옴
+		try {
+			conn = DBManager.getInstance().getConnection();
+			//4. PreparedStatement 생성
+			pstmt = conn.prepareStatement(sql);
+			//5. SQL문에 데이터 셋팅
+			pstmt.setString(1, carId);
+			pstmt.setString(2, carName);
+			pstmt.setInt(3, carMakeYear);
+			pstmt.setInt(4, carPrice);
+			pstmt.setString(5, carMakerCode);
+			//6. SQL문 실행
+			int count = pstmt.executeUpdate();
+			//7. 결과 출력
+			System.out.println("적용된 건수 : " + count);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			//8. close
+			DBManager.getInstance().close(conn, pstmt, null);
+		}
 	}
 	public static void deleteCar() {
 		//삭제할 자동차 ID를 입력 받아서 CAR 테이블에서 삭제 처리
@@ -51,6 +90,12 @@ public class CarJDBCMain {
 		//해당 검색어를 포함하고 있는 자동차들을 모두 조회
 	}
 	public static void main(String[] args) {
-		selectAllCar();
+//		selectAllCar();
+		insertCar();
 	}
 }
+
+
+
+
+
