@@ -15,7 +15,7 @@ public class FilterController implements Controller {
 			System.out.println("평점이 3.0 이상인 데이터가 없습니다.");
 		}else {
 			for (StudentDTO studentDTO : list) {
-				studentDTO.printInfo();
+				studentDTO.printStudentInfo();
 			}
 		}
 		
