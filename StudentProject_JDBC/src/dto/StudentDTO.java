@@ -1,15 +1,13 @@
 package dto;
 
-import java.util.Objects;
-
 public class StudentDTO {
 	private String studentNo;
 	private String studentName;
-	private int majorNo;
+	private String majorNo;
 	private String majorName;
 	private double score;
 	private char gender;
-	public StudentDTO(String studentNo, String studentName, int majorNo, String majorName, double score, char gender) {
+	public StudentDTO(String studentNo, String studentName, String majorNo, String majorName, double score, char gender) {
 		super();
 		this.studentNo = studentNo;
 		this.studentName = studentName;
@@ -30,10 +28,10 @@ public class StudentDTO {
 	public void setStudentName(String studentName) {
 		this.studentName = studentName;
 	}
-	public int getMajorNo() {
+	public String getMajorNo() {
 		return majorNo;
 	}
-	public void setMajorNo(int majorNo) {
+	public void setMajorNo(String majorNo) {
 		this.majorNo = majorNo;
 	}
 	public String getMajorName() {

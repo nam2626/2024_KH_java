@@ -53,7 +53,7 @@ public class StudentDAO {
 					char gender = rs.getString(5).charAt(0);
 					// 데이터를 꺼내서 StudentDTO 객체를 만들어서
 					// list에 등록
-					list.add(new StudentDTO(studentNo, studentName, 0,
+					list.add(new StudentDTO(studentNo, studentName, null,
 							majorName, score, gender));
 
 				}
@@ -83,7 +83,7 @@ public class StudentDAO {
 					char gender = rs.getString(5).charAt(0);
 					// 데이터를 꺼내서 StudentDTO 객체를 만들어서
 					// list에 등록
-					list.add(new StudentDTO(studentNo, studentName, 0,
+					list.add(new StudentDTO(studentNo, studentName, null,
 							majorName, score, gender));
 
 				}
@@ -112,7 +112,7 @@ public class StudentDAO {
 					char gender = rs.getString(5).charAt(0);
 					// 데이터를 꺼내서 StudentDTO 객체를 만들어서
 					// list에 등록
-					dto = new StudentDTO(studentNo, studentName, 0,
+					dto = new StudentDTO(studentNo, studentName, null,
 							majorName, score, gender);
 
 				}
@@ -141,7 +141,7 @@ public class StudentDAO {
 					char gender = rs.getString(5).charAt(0);
 					// 데이터를 꺼내서 StudentDTO 객체를 만들어서
 					// list에 등록
-					list.add(new StudentDTO(studentNo, studentName, 0,
+					list.add(new StudentDTO(studentNo, studentName, null,
 							majorName, score, gender));
 
 				}
@@ -153,4 +153,31 @@ public class StudentDAO {
 		return list;
 	}
 
+	public int insertStudent(StudentDTO dto) {
+		String sql = "insert into student values(?,?,?,?,?)";
+		int count = 0;
+		try(Connection conn = ods.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql)){
+			pstmt.setString(1, dto.getStudentNo());
+			pstmt.setString(2, dto.getStudentName());
+			pstmt.setDouble(3, dto.getScore());
+			pstmt.setString(4, dto.getGender()+"");
+			pstmt.setString(5, dto.getMajorNo());
+			count = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return count;
+	}
+
 }
+
+
+
+
+
+
+
+
+

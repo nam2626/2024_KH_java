@@ -24,13 +24,17 @@ public class RegisterController implements Controller{
 			
 			System.out.print("이름 입력 : ");
 			String studentName = sc.nextLine();
-			System.out.print("학과명 입력 : ");
-			String majorName = sc.nextLine();
+			System.out.print("학과번호 입력 : ");
+			String majorNo = sc.nextLine();
+			sc.nextLine();
 			System.out.print("평점 입력 : ");
 			double score = sc.nextDouble();
 			sc.nextLine();
-	
-			service.addStudent(new StudentDTO(studentNo, studentName, majorName, score));
+			System.out.print("성별 입력 : ");
+			char gender = sc.nextLine().charAt(0);
+			
+			service.addStudent(new StudentDTO(studentNo, studentName, 
+							majorNo, null, score, gender));
 			
 			System.out.println("학생 정보 등록 완료");
 		}catch (StudentException e) {

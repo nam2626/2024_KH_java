@@ -23,7 +23,9 @@ public class StudentService {
 	}
 	
 	public void addStudent(StudentDTO dto) throws StudentException {
-
+		int count = StudentDAO.getInstance().insertStudent(dto);
+		if(count == 0) 
+			throw new StudentException("학번이 중복되거나, 데이터가 잘못되었습니다.");
 	}
 	
 	//학생 데이터 검색
