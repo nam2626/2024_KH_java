@@ -34,7 +34,7 @@ public class StudentService {
 	}
 	//학생 데이터 삭제
 	public boolean deleteStudent(String studentNo) {
-		return true;
+		return StudentDAO.getInstance().deleteStudent(studentNo) != 0;
 	}
 
 	public ArrayList<StudentDTO> filterStudent(){

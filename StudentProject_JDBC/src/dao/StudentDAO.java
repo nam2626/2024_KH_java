@@ -171,6 +171,22 @@ public class StudentDAO {
 		return count;
 	}
 
+	public int deleteStudent(String studentNo) {
+		int count = 0;
+		
+		String sql = "delete from student where std_no like rpad(?,8,' ')";
+		
+		try(Connection conn = ods.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql)){
+			pstmt.setString(1, studentNo);
+			count = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return count;
+	}
+
 }
 
 
