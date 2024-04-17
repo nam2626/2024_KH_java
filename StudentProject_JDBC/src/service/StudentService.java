@@ -1,5 +1,6 @@
 package service;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -53,6 +54,10 @@ public class StudentService {
 
 	public ArrayList<StudentDTO> selectAllStudent() {
 		return StudentDAO.getInstance().selectAllStudent();
+	}
+
+	public void updateStudent(StudentDTO dto) throws SQLException{
+		StudentDAO.getInstance().updateStudent(dto);
 	}
 }
 

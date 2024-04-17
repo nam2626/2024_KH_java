@@ -1,5 +1,6 @@
 package controller;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import dto.StudentDTO;
@@ -24,17 +25,25 @@ public class UpdateController implements Controller {
 
 			System.out.print("수정할 이름 입력 : ");
 			String studentName = sc.nextLine();
-			System.out.print("수정할 학과명 입력 : ");
-			String majorName = sc.nextLine();
+			System.out.print("수정할 학과번호 입력 : ");
+			String majorNo = sc.nextLine();
 			System.out.print("수정할 평점 입력 : ");
 			double score = sc.nextDouble();
 			sc.nextLine();
 
 			dto.setStudentName(studentName);
-			dto.setMajorName(majorName);
+			dto.setMajorNo(majorNo);
 			dto.setScore(score);
+			
+			StudentService.getInstance().updateStudent(dto);
+			
 		} catch (StudentException e) {
+			System.out.println(e.getMessage());
+		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
 	}
 }
+
+
+

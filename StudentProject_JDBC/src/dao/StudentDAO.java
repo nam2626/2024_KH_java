@@ -187,6 +187,23 @@ public class StudentDAO {
 		return count;
 	}
 
+	public int updateStudent(StudentDTO dto) throws SQLException {
+		String sql = "update student set std_name = ?,"
+				+ "std_score = ?, major_no = ? "
+				+ "where std_no like rpad(?,8,' ')";
+		int count = 0;
+		try(Connection conn = ods.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql)){
+			pstmt.setString(1, dto.getStudentName());
+			pstmt.setDouble(2, dto.getScore());
+			pstmt.setString(3, dto.getMajorNo());
+			pstmt.setString(4, dto.getStudentNo());
+			count = pstmt.executeUpdate();
+		} 
+		
+		return count;
+	}
+
 }
 
 
