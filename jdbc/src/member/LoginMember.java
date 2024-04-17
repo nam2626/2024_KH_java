@@ -33,6 +33,8 @@ public class LoginMember {
 			ods.setURL("jdbc:oracle:thin:@127.0.0.1:1521/xe");
 			ods.setUser("c##scott");
 			ods.setPassword("123456");
+			
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
