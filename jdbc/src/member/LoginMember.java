@@ -1,5 +1,8 @@
 package member;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -28,17 +31,35 @@ public class LoginMember {
 
 	private static boolean login(String id, String passwd) {
 		OracleDataSource ods;
+		boolean result = false;
 		try {
 			ods = new OracleDataSource();
 			ods.setURL("jdbc:oracle:thin:@127.0.0.1:1521/xe");
 			ods.setUser("c##scott");
 			ods.setPassword("123456");
 			
+			String sql = "SELECT * FROM BOARD_MEMBER WHERE "
+					+ "BOARD_MEMBER_ID LIKE ? AND "
+					+ "BOARD_MEMBER_PASSWD LIKE STANDARD_HASH(?,'SHA512')";
 			
+			try(Connection conn = ods.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)){
+				
+				pstmt.setString(1, id);
+				pstmt.setString(2, passwd);
+				
+				try(ResultSet rs = pstmt.executeQuery()){
+					if(rs.next()) {
+						System.out.println(rs.getString(1) 
+								+ " " + rs.getString(2));
+						result = true;
+					}
+				}
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return false;
+		return result;
 	}
 
 }
