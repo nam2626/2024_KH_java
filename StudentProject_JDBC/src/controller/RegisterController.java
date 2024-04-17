@@ -26,7 +26,6 @@ public class RegisterController implements Controller{
 			String studentName = sc.nextLine();
 			System.out.print("학과번호 입력 : ");
 			String majorNo = sc.nextLine();
-			sc.nextLine();
 			System.out.print("평점 입력 : ");
 			double score = sc.nextDouble();
 			sc.nextLine();
