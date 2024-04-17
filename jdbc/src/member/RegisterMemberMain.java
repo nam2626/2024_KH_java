@@ -1,6 +1,11 @@
 package member;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Scanner;
+
+import oracle.jdbc.pool.OracleDataSource;
 
 public class RegisterMemberMain {
 
@@ -27,6 +32,29 @@ public class RegisterMemberMain {
 	}
 
 	private static void insertMemeber(String id, String name, String passwd, String nick) {
+		try {
+			OracleDataSource ods = new OracleDataSource();
+			ods.setURL("jdbc:oracle:thin:@127.0.0.1:1521/xe");
+			ods.setUser("c##scott");
+			ods.setPassword("123456");
+			
+			String sql = "INSERT INTO BOARD_MEMBER "
+					+ "VALUES(?,?,STANDARD_HASH(?,'512'),?)";
+			
+			try(Connection conn = ods.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)){
+				pstmt.setString(1, id);
+				pstmt.setString(2, name);
+				pstmt.setString(3, passwd);
+				pstmt.setString(4, nick);
+				
+				int count = pstmt.executeUpdate();
+				System.out.println("적용된 건수 : " + count);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 	}
 
