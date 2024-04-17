@@ -39,7 +39,7 @@ public class RegisterMemberMain {
 			ods.setPassword("123456");
 			
 			String sql = "INSERT INTO BOARD_MEMBER "
-					+ "VALUES(?,?,STANDARD_HASH(?,'512'),?)";
+					+ "VALUES(?,?,STANDARD_HASH(?,'SHA512'),?)";
 			
 			try(Connection conn = ods.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql)){
