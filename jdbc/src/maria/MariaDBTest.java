@@ -5,8 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.sql.DataSource;
-
 import org.mariadb.jdbc.MariaDbDataSource;
 
 public class MariaDBTest {
@@ -15,9 +13,9 @@ public class MariaDBTest {
 		MariaDbDataSource mds = new MariaDbDataSource();
 		try {
 			//접속주소:포트번호/사용할DB
-			mds.setUrl("jdbc:mariadb://nam3324.synology.me:32820/scott");
-			mds.setUser("scott");
-			mds.setPassword("scott");
+			mds.setUrl("jdbc:mariadb://접속주소:포트번호/DB명");
+			mds.setUser("아이디");
+			mds.setPassword("비밀번호");
 			String sql = "select * from student";
 			try(Connection conn = mds.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql)){
